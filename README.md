@@ -1,60 +1,57 @@
 # Sparkify
-Table of Contents
-Installation
-Project Motivation
-Files Description
-Results
-Licensing, Authors, and Acknowledgements
-Installation
-The data file mini_sparkify_event_data.json.zip must be unzipped before running the Sparkify.ipynb notebook
 
-Below are python libraries that are required to run this code using Python versions 3.*:
+### Chiyuan Cheng 08/23/2019
+
+## Table of Contents
+
+- [Project Motivation](#motivation)
+- [Files Description](#description)
+- [Results](#results)
+- [Software Installation](#installation)
+- [Acknowledgements](#credits)
+
+
+
+<a id='motivation'></a>
+## 1. Project Motivation
+
+The motivation of this project is to use Spark to
+- Perform the Exploratory Data Analysis (EDA) with large dataset.
+- Perform the Machine Learning with Spark including Feature Engineering, Model Training, Hyperparameter Tuning.
+
+Specifically, Spark was used to manipulate large datasets to engineer relevant features for predicting churn, and also to build machine learning models with pySpark, which is far beyond what could be done with non-distributed technologies.
+
+<a id='description'></a>
+## 2. Files Description
+
+The Sparkify_test.ipynb notebook contains all steps in this project.
+
+The data file (medium-sparkify-event-data.json) was downloaded from [Udacity website](https://s3.amazonaws.com/video.udacity-data.com/topher/2018/December/5c1d6681_medium-sparkify-event-data/medium-sparkify-event-data.json).
+
+This data set is a medicum subset (231.4MB) of the full dataset available (12GB). The data file is too large to be included on github.
+
+<a id='results'></a>
+## 3. Results
+
+1. There are noticable differences between a paid/free user, song length, total song, lifetime for subscription when comparing users who are churned and remain in service where:
+
+- Free users have a much higher ratio to be churned
+- Churn usually happens when a customer subscribes less length of song and listens less song.
+- Churned customers usually use the service for a shorter period of time
+
+2. While three models are used to trained the data, Random Forest has a much better performance (with accuracy of 0.83 and F1 score of 0.80) and faster computation time. 
+
+The detailed findings can be found in a blog post available [here](https://medium.com/@cyuancheng/use-machine-learning-to-predict-customer-churn-9281cc249c7a).
+
+<a id='installation)'></a>
+## 4. Software Installation
 
 pyspark 2.4.3
 pandas 0.24.1
 matplotlib 3.0.2
 seaborn 0.9.0
-[TROUBLESHOOTING on MAC] If you get an error complaining about an absence of Java when running Sparkify.ipynb on mac, follow the instructions below:
 
-Install pyspark (I used conda to install it)
+<a id='credits)'></a>
+## 5. Acknowledgements
 
-Install Java8 on your mac link
-
-Open a new terminal and verify that Java is available on your mac by using the command below:
-
-java -version
-If you are seeing the message No Java runtime present, requesting install., you would need to add the following export to your ~/.bash_profile (Please refer to the top answer of this stackoverflow post )
-
-export JAVA_HOME=/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home
-
-Start a jupyter notebook in a brand new terminal to use the new environment setting
-Project Motivation
-For this project, I was interestested gaining experience with using Spark to
-
-Perform the Exploratory Data Analysis (EDA) with large and realistic datasets.
-Perform the Machine Learning process with Spark including Feature Creation, Model Training, Hyperparameter Tuning.
-More specifically, I was interested in learning how to use Spark to manipulate large and realistic datasets with Spark to engineer relevant features for predicting churn, and also use Spark MLlib to build machine learning models with large datasets which is far beyond what could be done with non-distributed technologies like scikit-learn.
-
-Files Description
-The data file mini_sparkify_event_data.json.zip must be unzipped before running the notebook.
-
-This data set mini_sparkify_event_data.json is a mini subset (128MB) of the full dataset available (12GB)
-
-The Sparkify.ipynb notebook contains all steps in this process and markdown cells were used to assist in walking through the thought process for individual steps.
-
-The Sparkify.html was the report generated after running all cells in the notebook
-
-Results
-There are noticable differences between a ratio of gender, average session time, and an average number of songs played within a single session when comparing users who are churned and remain in service where:
-
-Men have a much higher ratio to be churned
-The average session time of users who remain in service is higher (303 minutes vs 283 minutes)
-The average number of song per session of users who remain in service is higher (75 songs/session vs 70 songs/session)
-A model trained from the Gradient-boosted tree classifier has a much better performance that a model trained form the Logistic Regression where the best model trained from the Gradient-boosted tree classifier achieved over 99% of area under ROC curve and has an accuracy over 97% while the best model trained from the Logistic Regression achieved only 70% of area under ROC and has an accuracy around 83%
-
-The detailed findings and analysis can be found in a Medium post available here.
-
-Licensing, Authors, Acknowledgements
-Data set used in this project was downloaded from the Data Science Capstone Project:Using Spark to Predict Churn with Insight Data Science of the Data Scientist Nanodegree Program and must give credit to Udacity for the data.
-
-This project is MIT licensed.
+Dataset used in this project was downloaded from the Data Science Capstone Project:Using Spark to Predict Churn with Insight Data Science of the Data Scientist Nanodegree Program. The credit is given to Udacity for the data and instruction.
