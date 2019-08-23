@@ -46,10 +46,10 @@ The detailed findings can be found in a blog post available [here](https://mediu
 <a id='installation)'></a>
 ## 4. Software Installation
 
-pyspark 2.4.3
-pandas 0.24.1
-matplotlib 3.0.2
-seaborn 0.9.0
+- pyspark 2.4.3
+- pandas 0.24.1
+- matplotlib 3.0.2
+- seaborn 0.9.0
 
 <a id='credits)'></a>
 ## 5. Acknowledgements
